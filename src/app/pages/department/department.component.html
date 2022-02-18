@@ -1,0 +1,40 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header border-0 d-flex">
+          <h3 class="mb-0">Departments</h3>
+          <button class="btn btn-sm btn-primary ml-auto" type="button" (click)="addDep()">
+            Add
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th class="sort" scope="col">Name</th>
+                <th class="sort" scope="col">Description</th>
+                <th class="sort" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="list">
+              <tr *ngFor="let department of departments; let i = index">
+                <td>{{ department.name }}</td>
+                <td>{{ department.description }}</td>
+                <td>
+                  <button class="btn btn-sm btn-info" type="button" (click)="editDep(department)">
+                    edit
+                  </button>
+                  <button class="btn btn-sm btn-danger" type="button" (click)="delDep(department)">
+                    delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

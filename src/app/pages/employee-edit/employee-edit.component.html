@@ -1,0 +1,49 @@
+<div class="modal-header">
+  <span class="font-weight-bold">Edit employee</span>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">×</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <div class="form-group">
+    <label class="form-control-label">Department</label>
+    <select class="form-control" [(ngModel)]="employee.departmentId">
+      <option *ngFor="let department of departments" value="{{ department.id }}">
+        {{ department.name }}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">First name</label>
+    <input class="form-control" type="text" [(ngModel)]="employee.firstName" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Last name</label>
+    <input class="form-control" type="text" [(ngModel)]="employee.lastName" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Email</label>
+    <input class="form-control" type="email" [(ngModel)]="employee.email" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Phone</label>
+    <input class="form-control" type="tel" [(ngModel)]="employee.phone" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Salary</label>
+    <input class="form-control" type="number" [(ngModel)]="employee.salary" min="0" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Avatar</label>
+    <input class="form-control" type="text" [(ngModel)]="employee.avatar" />
+  </div>
+  <div class="form-group">
+    <label class="form-control-label">Bio</label>
+    <textarea class="form-control" rows="3" maxlength="200" [(ngModel)]="employee.bio"> </textarea>
+  </div>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-sm btn-info" (click)="ediEmp()">Submit</button>
+</div>
